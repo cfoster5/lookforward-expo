@@ -6,23 +6,6 @@ import { View } from "@/components/Themed";
 import { useMovieData } from "@/getMovies";
 import { MovieOption } from "@/types";
 
-function ListItem({ item: pair }) {
-  return (
-    <View style={{ flex: 1, flexDirection: "row", columnGap: 16 }}>
-      {pair.map((movie) => (
-        <MoviePoster key={movie?.id?.toString()} movie={movie} />
-      ))}
-    </View>
-  );
-}
-
-function composePairedData(initialData) {
-  return initialData?.reduce((result, value, index, array) => {
-    if (index % 2 === 0) result.push(array.slice(index, index + 2));
-    return result;
-  }, []);
-}
-
 export default function TabOneScreen() {
   const [option, setOption] = useState<MovieOption>(MovieOption.ComingSoon);
   const [searchValue, setSearchValue] = useState("");
@@ -35,14 +18,16 @@ export default function TabOneScreen() {
   const results = data?.pages.flatMap((page) => page.results);
   return (
     <FlatList
-      data={composePairedData(results)}
-      renderItem={ListItem}
+      data={results}
+      renderItem={({ item }) => <MoviePoster item={item} />}
       ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+      ListEmptyComponent={() => <ActivityIndicator />}
+      columnWrapperStyle={{ columnGap: 16 }}
       contentContainerStyle={{ padding: 16 }}
-      // keyExtractor={(item) => item?.id?.toString()}
+      keyExtractor={(item) => item?.id?.toString()}
+      numColumns={2}
       onEndReached={() => (hasNextPage ? fetchNextPage() : null)}
       onEndReachedThreshold={1.5}
-      ListEmptyComponent={() => <ActivityIndicator />}
     />
   );
 }

@@ -4,14 +4,14 @@ import { PlatformColor, Pressable } from "react-native";
 
 import { PosterButton } from "./PosterButton";
 
-export const MoviePoster = ({ movie }) => {
+export const MoviePoster = ({ item }) => {
   const [segment] = useSegments();
 
   return (
-    <Link href={`/${segment}/movie/${movie.id}`} asChild>
+    <Link href={`/${segment}/movie/${item.id}`} asChild>
       <Pressable style={{ flex: 1 }}>
         <Image
-          source={`https://image.tmdb.org/t/p/w780${movie?.poster_path}`}
+          source={`https://image.tmdb.org/t/p/w780${item?.poster_path}`}
           style={{
             aspectRatio: "2/3",
             borderRadius: 8,

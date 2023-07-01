@@ -27,7 +27,9 @@ export const PosterButton = () => (
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
+        // backgroundColor: "rgba(0, 0, 0, .3)",
       }}
+      tint="dark"
     >
       <FontAwesome name="plus" size={32} color="white" />
     </BlurView>
