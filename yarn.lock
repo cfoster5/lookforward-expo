@@ -1245,18 +1245,18 @@
     mv "~2"
     safe-json-stringify "~1"
 
-"@expo/cli@0.10.5":
-  version "0.10.5"
-  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.10.5.tgz#62802acea069fcf3014586a5d9127a13a75b68cf"
-  integrity sha512-54EWScgaIjL/EJUVfzZOAzT/PqjnkaGoJgCbgakfxdpWzNWaBTdSvfwY6+d8bRsRqFng7ffvvDCq8H5hJQZIgA==
+"@expo/cli@0.10.7":
+  version "0.10.7"
+  resolved "https://registry.yarnpkg.com/@expo/cli/-/cli-0.10.7.tgz#8b0a506515b07d32f1ee876aa9734123c452fdcd"
+  integrity sha512-RlR3MxhcVYNlCsbJMHurvDjmh4ttSjW1gAAGq5pzG6Kxe8reEbaBVxA7x14xfjlufIxREf8KoYi1xDuhHjn6nA==
   dependencies:
     "@babel/runtime" "^7.20.0"
     "@expo/code-signing-certificates" "0.0.5"
     "@expo/config" "~8.1.0"
     "@expo/config-plugins" "~7.2.0"
-    "@expo/dev-server" "0.5.2"
+    "@expo/dev-server" "0.5.3"
     "@expo/devcert" "^1.0.0"
-    "@expo/env" "~0.0.2"
+    "@expo/env" "0.0.5"
     "@expo/json-file" "^8.2.37"
     "@expo/metro-config" "~0.10.0"
     "@expo/osascript" "^2.0.31"
@@ -1322,10 +1322,10 @@
     node-forge "^1.2.1"
     nullthrows "^1.1.1"
 
-"@expo/config-plugins@7.2.3":
-  version "7.2.3"
-  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-7.2.3.tgz#982800bf1aec3811f3e087a1e8784c82f0853672"
-  integrity sha512-8wBR4HH2PhPbupUNXCB1aslMD4vNYEnew26os1nCZ4vaUwcp0LeI9Zl2ycOCBVwGSdd5RNHFzK2R/OFE9P13tA==
+"@expo/config-plugins@7.2.4":
+  version "7.2.4"
+  resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-7.2.4.tgz#c8d354348b746e53d70224f0bf7b87994f7c2936"
+  integrity sha512-TItGwmKH1GDjA5GlMkXo1A8pqeqppSK40aSVRVQaGZraUj+nuvtpWxNgEWZxWFumiatP2ocWwyWVjfmH+rJY6g==
   dependencies:
     "@expo/config-types" "^49.0.0-alpha.1"
     "@expo/json-file" "~8.2.37"
@@ -1460,10 +1460,10 @@
     xcode "^3.0.0"
     xml-js "^1.6.11"
 
-"@expo/dev-server@0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@expo/dev-server/-/dev-server-0.5.2.tgz#ff00bc0a4d5ad04fe81218de06d9058b9039d703"
-  integrity sha512-AdroXa8JJ+sTOmbWTJXw1RPHn4sU206XW+isEC/DuSRTZiWxVZ6la4tu5AEiJBq4o33ikx2QpS+PBSo3b3QKhQ==
+"@expo/dev-server@0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@expo/dev-server/-/dev-server-0.5.3.tgz#6e629d574effa7ed29c1eaed82f99022f62486d8"
+  integrity sha512-dNm8w8muGvHTsq68eu1R30ZibDm4m5KsemuGgCHSYWW6RaZdyzFI6KlA9bxHchkqrlNntTDNk9rRDJBAg9v5Aw==
   dependencies:
     "@expo/bunyan" "4.0.0"
     "@expo/metro-config" "~0.10.0"
@@ -1478,7 +1478,6 @@
     node-fetch "^2.6.0"
     open "^8.3.0"
     resolve-from "^5.0.0"
-    semver "7.5.3"
     serialize-error "6.0.0"
     temp-dir "^2.0.0"
 
@@ -1500,6 +1499,17 @@
     sudo-prompt "^8.2.0"
     tmp "^0.0.33"
     tslib "^2.4.0"
+
+"@expo/env@0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@expo/env/-/env-0.0.5.tgz#86526ed5c966fc39b2644341f7a10f4b855e59b8"
+  integrity sha512-UXuKAqyXfhMQC3gP0OyjXmFX08Z1fkVWiGBN7bYzfoX8LHatjeHrDtI6w5nDvd8XPxPvmqaZoEDw1lW3+dz3oQ==
+  dependencies:
+    chalk "^4.0.0"
+    debug "^4.3.4"
+    dotenv "~16.0.3"
+    dotenv-expand "~10.0.0"
+    getenv "^1.0.0"
 
 "@expo/env@~0.0.2":
   version "0.0.2"
@@ -2256,7 +2266,7 @@
   resolved "https://registry.yarnpkg.com/@react-native/js-polyfills/-/js-polyfills-0.72.1.tgz#905343ef0c51256f128256330fccbdb35b922291"
   integrity sha512-cRPZh2rBswFnGt5X5EUEPs0r+pAsXxYsifv/fgy9ZLQokuT52bPH+9xjDR+7TafRua5CttGW83wP4TntRcWNDA==
 
-"@react-native/normalize-color@^2.0.0":
+"@react-native/normalize-color@^2.0.0", "@react-native/normalize-color@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@react-native/normalize-color/-/normalize-color-2.1.0.tgz#939b87a9849e81687d3640c5efa2a486ac266f91"
   integrity sha512-Z1jQI2NpdFJCVgpY+8Dq/Bt3d+YUi1928Q+/CZm/oh66fzM0RUl54vvuXlPJKybH4pdCZey1eDTPaLHkMPNgWA==
@@ -3666,14 +3676,6 @@ cosmiconfig@^5.0.5, cosmiconfig@^5.1.0:
     js-yaml "^3.13.1"
     parse-json "^4.0.0"
 
-create-react-class@^15.7.0:
-  version "15.7.0"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.7.0.tgz#7499d7ca2e69bb51d13faf59bd04f0c65a1d6c1e"
-  integrity sha512-QZv4sFWG9S5RUvkTYWbflxeZX+JG7Cz0Tn33rQBJ+WFQTqTfUTjMjiv9tnfXazjsO5r0KhPs+AqCjyrQX6h2ng==
-  dependencies:
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
-
 cross-fetch@^3.1.5:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-3.1.6.tgz#bae05aa31a4da760969756318feeee6e70f15d6c"
@@ -4556,15 +4558,15 @@ expo-web-browser@~12.3.2:
     compare-urls "^2.0.0"
     url "^0.11.0"
 
-expo@~49.0.0-beta.1:
-  version "49.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/expo/-/expo-49.0.0-beta.1.tgz#7b76b8c2cfb9b9b3ea618dc5f50772f37ab7618f"
-  integrity sha512-Md3GD5IRplEznk09SQqpp2A2YQyehWQ8e+NJBEZLuMrgTyw4cEppjSNePokYGxBpIn8kJYRH68v+A1BWnD0L2Q==
+expo@^49.0.0-beta.3:
+  version "49.0.0-beta.3"
+  resolved "https://registry.yarnpkg.com/expo/-/expo-49.0.0-beta.3.tgz#ddf27573c9200c62fe66055de8b8d9510dd6c567"
+  integrity sha512-MiRm38qUvr6kx9qNdRqr0mV0IRuP0J1JpWplPhgyzZt6qKGyNJSRDCj/vxCBWaeIIW9BugLqrox3nTWIdLgJtQ==
   dependencies:
     "@babel/runtime" "^7.20.0"
-    "@expo/cli" "0.10.5"
+    "@expo/cli" "0.10.7"
     "@expo/config" "8.1.2"
-    "@expo/config-plugins" "7.2.3"
+    "@expo/config-plugins" "7.2.4"
     "@expo/vector-icons" "^13.0.0"
     babel-preset-expo "~9.5.0"
     expo-application "~5.3.0"
@@ -6417,7 +6419,7 @@ logkitty@^0.7.1:
     dayjs "^1.8.15"
     yargs "^15.1.0"
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
+loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -6499,6 +6501,11 @@ memoize-one@^5.0.0:
   version "5.2.1"
   resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-5.2.1.tgz#8337aa3c4335581839ec01c3d594090cebe8f00e"
   integrity sha512-zYiwtZUcYyXKo/np96AGZAckk+FWWsUdJ3cHGGmld7+AhvcWmQyGCYUh1hc4Q/pkOhb65dQR/pqCyK0cOaHz4Q==
+
+memoize-one@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/memoize-one/-/memoize-one-6.0.0.tgz#b2591b871ed82948aee4727dc6abceeeac8c1045"
+  integrity sha512-rkpe71W0N0c0Xz6QD0eJETuWAJGnJ9afsl1srmwPrI+yBCkge5EycXXbYRyvL29zZVUWQCY7InPRCv3GDXuZNw==
 
 memory-cache@~0.2.0:
   version "0.2.0"
@@ -7018,11 +7025,6 @@ node-stream-zip@^1.9.1:
   version "1.15.0"
   resolved "https://registry.yarnpkg.com/node-stream-zip/-/node-stream-zip-1.15.0.tgz#158adb88ed8004c6c49a396b50a6a5de3bca33ea"
   integrity sha512-LN4fydt9TqhZhThkZIVQnF9cwjU3qmUH9h78Mx/K7d3VvfRqqwthLwJEUOEL0QPZ0XQmNN7be5Ggit5+4dq3Bw==
-
-normalize-css-color@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/normalize-css-color/-/normalize-css-color-1.0.2.tgz#02991e97cccec6623fe573afbbf0de6a1f3e9f8d"
-  integrity sha512-jPJ/V7Cp1UytdidsPqviKEElFQJs22hUUgK5BOPHTwOonNCk7/2qOxhhqzEajmFrWJowADFfOFh1V+aWkRfy+w==
 
 normalize-path@^3.0.0:
   version "3.0.0"
@@ -7749,18 +7751,19 @@ react-native-screens@~3.22.0:
     react-freeze "^1.0.0"
     warn-once "^0.1.0"
 
-react-native-web@~0.18.10:
-  version "0.18.12"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.18.12.tgz#d4bb3a783ece2514ba0508d7805b09c0a98f5a8e"
-  integrity sha512-fboP7yqobJ8InSr4fP+bQ3scOtSQtUoPcR+HWasH8b/fk/RO+mWcJs/8n+lewy9WTZc2D68ha7VwRDviUshEWA==
+react-native-web@~0.19.6:
+  version "0.19.6"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.19.6.tgz#d9bb880b28b30725c09e7efdb70f2c07df0a6ab2"
+  integrity sha512-lk0X4y4DhZxc2e7Wdc1NkvJVObZZOLAz9l7S5a5awLI5SsZoF5L0WZhiU/+qWu5cpV0wMkME9qx7CvegmO4snw==
   dependencies:
     "@babel/runtime" "^7.18.6"
-    create-react-class "^15.7.0"
+    "@react-native/normalize-color" "^2.1.0"
     fbjs "^3.0.4"
     inline-style-prefixer "^6.0.1"
-    normalize-css-color "^1.0.2"
+    memoize-one "^6.0.0"
+    nullthrows "^1.1.1"
     postcss-value-parser "^4.2.0"
-    styleq "^0.1.2"
+    styleq "^0.1.3"
 
 react-native@0.72.0:
   version "0.72.0"
@@ -8569,7 +8572,7 @@ structured-headers@^0.4.1:
   resolved "https://registry.yarnpkg.com/structured-headers/-/structured-headers-0.4.1.tgz#77abd9410622c6926261c09b9d16cf10592694d1"
   integrity sha512-0MP/Cxx5SzeeZ10p/bZI0S6MpgD+yxAhi1BOQ34jgnMXsCq3j1t6tQnZu+KdlL7dvJTLT3g9xN8tl10TqgFMcg==
 
-styleq@^0.1.2:
+styleq@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/styleq/-/styleq-0.1.3.tgz#8efb2892debd51ce7b31dc09c227ad920decab71"
   integrity sha512-3ZUifmCDCQanjeej1f6kyl/BeP/Vae5EYkQ9iJfUm/QwZvlgnZzyflqAsAWYURdtea8Vkvswu2GrC57h3qffcA==
