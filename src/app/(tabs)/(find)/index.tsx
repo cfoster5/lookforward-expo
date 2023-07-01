@@ -20,7 +20,7 @@ export default function TabOneScreen() {
     <FlatList
       data={results}
       renderItem={({ item }) => <MoviePoster item={item} />}
-      ItemSeparatorComponent={() => <View style={{ height: 16 }} />}
+      ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
       ListEmptyComponent={() => <ActivityIndicator />}
       columnWrapperStyle={{ columnGap: 16 }}
       contentContainerStyle={{ padding: 16 }}
