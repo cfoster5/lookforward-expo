@@ -4558,7 +4558,7 @@ expo-web-browser@~12.3.2:
     compare-urls "^2.0.0"
     url "^0.11.0"
 
-expo@^49.0.0-beta.3:
+expo@~49.0.0-beta.3:
   version "49.0.0-beta.3"
   resolved "https://registry.yarnpkg.com/expo/-/expo-49.0.0-beta.3.tgz#ddf27573c9200c62fe66055de8b8d9510dd6c567"
   integrity sha512-MiRm38qUvr6kx9qNdRqr0mV0IRuP0J1JpWplPhgyzZt6qKGyNJSRDCj/vxCBWaeIIW9BugLqrox3nTWIdLgJtQ==
