@@ -1,8 +1,17 @@
 import { Image } from "expo-image";
 import { Link, useSegments } from "expo-router";
-import { PlatformColor, Pressable } from "react-native";
+import { PlatformColor, Pressable, StyleSheet } from "react-native";
+import { human } from "react-native-typography";
 
 import { PosterButton } from "./PosterButton";
+import { Text, View } from "../Themed";
+
+const style = {
+  aspectRatio: "2/3",
+  borderRadius: 8,
+  borderWidth: StyleSheet.hairlineWidth,
+  borderColor: PlatformColor("opaqueSeparator"),
+};
 
 export const MoviePoster = ({ item }) => {
   const [segment] = useSegments();
@@ -10,17 +19,31 @@ export const MoviePoster = ({ item }) => {
   return (
     <Link href={`/${segment}/movie/${item.id}`} asChild>
       <Pressable style={{ flex: 1 }}>
+        {item?.poster_path ? (
         <Image
           source={`https://image.tmdb.org/t/p/w780${item?.poster_path}`}
-          style={{
-            aspectRatio: "2/3",
-            borderRadius: 8,
-            borderWidth: 1,
-            borderColor: PlatformColor("systemGray6"),
-          }}
+            style={style}
         >
           <PosterButton />
         </Image>
+        ) : (
+          <View style={[style, { justifyContent: "center" }]}>
+            <Text
+              style={[
+                human.headline,
+                {
+                  alignSelf: "center",
+                  padding: 8,
+                  textAlign: "center",
+                  position: "absolute",
+                },
+              ]}
+            >
+              {item?.title}
+            </Text>
+            <PosterButton />
+          </View>
+        )}
       </Pressable>
     </Link>
   );
