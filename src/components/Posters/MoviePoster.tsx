@@ -17,15 +17,21 @@ export const MoviePoster = ({ item }) => {
   const [segment] = useSegments();
 
   return (
-    <Link href={`/${segment}/movie/${item.id}`} asChild>
+    <Link
+      href={{
+        pathname: `/${segment}/movie/[id]`,
+        params: { id: item?.id ?? "", title: item?.title ?? "" },
+      }}
+      asChild
+    >
       <Pressable style={{ flex: 1 }}>
         {item?.poster_path ? (
-        <Image
-          source={`https://image.tmdb.org/t/p/w780${item?.poster_path}`}
+          <Image
+            source={`https://image.tmdb.org/t/p/w780${item?.poster_path}`}
             style={style}
-        >
-          <PosterButton />
-        </Image>
+          >
+            <PosterButton />
+          </Image>
         ) : (
           <View style={[style, { justifyContent: "center" }]}>
             <Text
