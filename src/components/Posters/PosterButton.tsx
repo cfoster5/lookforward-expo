@@ -1,6 +1,6 @@
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { BlurView } from "expo-blur";
-import { PlatformColor } from "react-native";
+import { PlatformColor, StyleSheet } from "react-native";
 
 import { View } from "../Themed";
 
@@ -10,8 +10,8 @@ export const PosterButton = () => (
       width: 44,
       height: 44,
       borderRadius: 44,
-      borderWidth: 1,
-      borderColor: PlatformColor("systemGray6"),
+      borderWidth: StyleSheet.hairlineWidth,
+      borderColor: PlatformColor("opaqueSeparator"),
       marginTop: "auto",
       marginLeft: "auto",
       marginRight: 4,
