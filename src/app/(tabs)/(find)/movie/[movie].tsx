@@ -1,13 +1,20 @@
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, useNavigation } from "expo-router";
+import { useLayoutEffect } from "react";
 import { StyleSheet } from "react-native";
 
 import { Text, View } from "@/components/Themed";
 
 export default function TabTwoScreen() {
-  const { movie } = useLocalSearchParams<{ movie: any }>();
+  const { id, title } = useLocalSearchParams<{ id: any; title: string }>();
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({ title } ?? {});
+  }, [navigation, title]);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{movie}</Text>
+      <Text style={styles.title}>{title}</Text>
       <View
         style={styles.separator}
         lightColor="#eee"
