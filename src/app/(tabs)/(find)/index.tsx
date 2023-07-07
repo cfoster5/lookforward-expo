@@ -7,15 +7,16 @@ import { human } from "react-native-typography";
 import { MoviePoster } from "@/components/Posters";
 import { View } from "@/components/Themed";
 import { useMovieData } from "@/getMovies";
+import useDebounce from "@/hooks/useDebounce";
 import { MovieOption } from "@/types";
 
 export default function TabOneScreen() {
   const [option, setOption] = useState<MovieOption>(MovieOption.ComingSoon);
   const [searchValue, setSearchValue] = useState("");
-  // const debouncedSearch = useDebounce(searchValue, 400);
+  const debouncedSearch = useDebounce(searchValue, 400);
   const { data, fetchNextPage, hasNextPage, isLoading } = useMovieData(
     option,
-    searchValue
+    debouncedSearch
   );
 
   const results = data?.pages.flatMap((page) => page.results);
@@ -41,19 +42,19 @@ export default function TabOneScreen() {
         />
       </SafeAreaView>
 
-    <FlatList
+      <FlatList
         // contentInsetAdjustmentBehavior="automatic"
-      data={results}
-      renderItem={({ item }) => <MoviePoster item={item} />}
-      ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
-      ListEmptyComponent={() => <ActivityIndicator />}
-      columnWrapperStyle={{ columnGap: 16 }}
+        data={results}
+        renderItem={({ item }) => <MoviePoster item={item} />}
+        ItemSeparatorComponent={() => <View style={{ marginVertical: 8 }} />}
+        ListEmptyComponent={() => <ActivityIndicator />}
+        columnWrapperStyle={{ columnGap: 16 }}
         contentContainerStyle={{ padding: 16, paddingTop: 0 }}
-      keyExtractor={(item) => item?.id?.toString()}
-      numColumns={2}
-      onEndReached={() => (hasNextPage ? fetchNextPage() : null)}
-      onEndReachedThreshold={1.5}
-    />
+        keyExtractor={(item) => item?.id?.toString()}
+        numColumns={2}
+        onEndReached={() => (hasNextPage ? fetchNextPage() : null)}
+        onEndReachedThreshold={1.5}
+      />
     </>
   );
 }
