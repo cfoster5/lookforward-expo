@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/native";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useColorScheme } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 const queryClient = new QueryClient();
 
@@ -17,7 +18,7 @@ export function AppProvider({ children }: Props) {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
-        {children}
+        <SafeAreaProvider>{children}</SafeAreaProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
