@@ -1,12 +1,15 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import Constants from "expo-constants";
 import {
+  UpcomingMovies,
   MoviesPlayingNow,
   PopularMovies,
-  UpcomingMovies,
-} from "interfaces/tmdb";
+  Search,
+  MovieWithMediaType,
+  PersonWithMediaType,
+} from "tmdb-ts";
 
-import { MovieOption, MultiSearch } from "@/types";
+import { MovieOption } from "@/types";
 
 async function getMovies({
   pageParam = 1,
@@ -30,8 +33,11 @@ async function getMovies({
   const response = await fetch(
     !searchValue ? endpoints[option] : endpoints.Search
   );
-  const json: UpcomingMovies | MoviesPlayingNow | PopularMovies | MultiSearch =
-    await response.json();
+  const json:
+    | UpcomingMovies
+    | MoviesPlayingNow
+    | PopularMovies
+    | Search<MovieWithMediaType | PersonWithMediaType> = await response.json();
   return json;
 }
 

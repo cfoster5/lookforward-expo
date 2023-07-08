@@ -2,6 +2,13 @@ import { Image } from "expo-image";
 import { Link, useSegments } from "expo-router";
 import { PlatformColor, Pressable, StyleSheet } from "react-native";
 import { human } from "react-native-typography";
+import {
+  UpcomingMovies,
+  MoviesPlayingNow,
+  PopularMovies,
+  Search,
+  MovieWithMediaType,
+} from "tmdb-ts";
 
 import { PosterButton } from "./PosterButton";
 import { Text, View } from "../Themed";
@@ -13,7 +20,16 @@ const style = {
   borderColor: PlatformColor("opaqueSeparator"),
 };
 
-export const MoviePoster = ({ item }) => {
+export const MoviePoster = ({
+  item,
+}: {
+  item: (
+    | UpcomingMovies
+    | MoviesPlayingNow
+    | PopularMovies
+    | Search<MovieWithMediaType>
+  )["results"][0];
+}) => {
   const [segment] = useSegments();
 
   return (
