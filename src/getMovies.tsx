@@ -1,5 +1,4 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
-import Constants from "expo-constants";
 import {
   UpcomingMovies,
   MoviesPlayingNow,
@@ -9,6 +8,7 @@ import {
   PersonWithMediaType,
 } from "tmdb-ts";
 
+import { TmdbKey } from "@/constants/Keys";
 import { MovieOption } from "@/types";
 
 async function getMovies({
@@ -20,9 +20,6 @@ async function getMovies({
   option: MovieOption;
   searchValue?: string;
 }) {
-  const TmdbKey = Constants.expoConfig?.extra?.TMDB_KEY;
-  // const { option, searchValue }: { option: MovieOption; searchValue?: string } =
-  //   queryKey[1];
   const endpoints = {
     [MovieOption.ComingSoon]: `https://api.themoviedb.org/3/movie/upcoming?api_key=${TmdbKey}&language=en-US&page=${pageParam}&region=US`,
     [MovieOption.NowPlaying]: `https://api.themoviedb.org/3/movie/now_playing?api_key=${TmdbKey}&language=en-US&page=${pageParam}&region=US`,
