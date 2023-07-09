@@ -15,7 +15,8 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
-      googleServicesFile: process.env.GOOGLE_SERVICE_PLIST,
+      googleServicesFile:
+        process.env.GOOGLE_SERVICE_PLIST ?? "./GoogleService-Info.secret.plist",
       bundleIdentifier: "com.lookforward.app",
     },
     android: {
