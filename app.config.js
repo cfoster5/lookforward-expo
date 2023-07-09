@@ -15,6 +15,7 @@ export default {
     assetBundlePatterns: ["**/*"],
     ios: {
       supportsTablet: true,
+      googleServicesFile: process.env.GOOGLE_SERVICE_PLIST,
       bundleIdentifier: "com.lookforward.app",
     },
     android: {
@@ -28,7 +29,11 @@ export default {
       output: "static",
       favicon: "./src/assets/images/favicon.png",
     },
-    plugins: ["expo-router"],
+    plugins: [
+      "expo-router",
+      "@react-native-firebase/app",
+      ["expo-build-properties", { ios: { useFrameworks: "static" } }],
+    ],
     experiments: {
       tsconfigPaths: true,
       typedRoutes: true,
