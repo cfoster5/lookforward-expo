@@ -28,7 +28,7 @@ export const MoviePoster = ({
     | MoviesPlayingNow
     | PopularMovies
     | Search<MovieWithMediaType>
-  )["results"][0];
+  )["results"][number];
 }) => {
   const [segment] = useSegments();
 
