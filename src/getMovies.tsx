@@ -4,8 +4,7 @@ import {
   MoviesPlayingNow,
   PopularMovies,
   Search,
-  MovieWithMediaType,
-  PersonWithMediaType,
+  MultiSearchResult,
 } from "tmdb-ts";
 
 import { TmdbKey } from "@/constants/Keys";
@@ -34,7 +33,7 @@ async function getMovies({
     | UpcomingMovies
     | MoviesPlayingNow
     | PopularMovies
-    | Search<MovieWithMediaType | PersonWithMediaType> = await response.json();
+    | Search<MultiSearchResult> = await response.json();
   return json;
 }
 
@@ -45,7 +44,6 @@ export function useMovieData(option: MovieOption, searchValue: string) {
     {
       getNextPageParam: (lastPage) =>
         lastPage.page !== lastPage.total_pages ? lastPage.page + 1 : undefined,
-      // select: (movieData) => movieData.pages.flatMap((page) => page.results),
     }
   );
 }
