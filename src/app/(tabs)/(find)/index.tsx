@@ -39,6 +39,9 @@ export default function TabOneScreen() {
           platform="ios"
           searchIcon={{ color: PlatformColor("secondaryLabel") }}
           value={searchValue}
+          cancelButtonProps={{
+            buttonTextStyle: { fontSize: human.bodyObject.fontSize },
+          }}
         />
       </SafeAreaView>
 
