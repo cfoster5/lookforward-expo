@@ -39,7 +39,8 @@
     "react-native-screens": "~3.22.0",
     "react-native-typography": "^1.4.1",
     "react-native-web": "~0.19.6",
-    "tmdb-ts": "^1.4.0"
+    "tmdb-ts": "^1.4.0",
+    "zustand": "^4.3.9"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
