@@ -59,7 +59,8 @@
   "eslintConfig": {
     "extends": [
       "universe/native",
-      "plugin:@tanstack/eslint-plugin-query/recommended"
+      "plugin:@tanstack/eslint-plugin-query/recommended",
+      "plugin:react-hooks/recommended"
     ]
   },
   "overrides": {
